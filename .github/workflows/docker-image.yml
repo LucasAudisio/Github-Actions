@@ -15,10 +15,10 @@ jobs:
       uses: actions/checkout@v2
       
     - name: Build Docker image
-      run: docker build -t lucasaudisio/hola-mundaso:${{ github.sha }} .
+      run: docker build -t lucasaudisio/hola-mundaso:latest .
       
     - name: Log in to Docker Hub
       run: docker login -u lucasaudisio -p ${{ secrets.DOCKERHUB_TOKEN }}
       
     - name: Push Docker image
-      run: docker push lucasaudisio/hola-mundaso:${{ github.sha }}
+      run: docker push lucasaudisio/hola-mundaso:latest
